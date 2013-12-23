@@ -57,21 +57,19 @@ Gulp *потоковая* система сборки. Здесь я хотел 
 затруднений.
 
 
-## Examples
+## Примеры
 
-This may not sink in until you actually see some code, so I’ll give you a
-couple examples. In the following code snippets we are setting up a gruntfile 
-and a gulpfile that will lint, concatenate and minify our project's JavaScript 
-files. Then we will set them both up to watch for when those files are changed 
-and then run the tasks again.
+Все это трудно оценить без кода. Так что я покажу вам пару примеров. В следующих
+фрагментах кода мы создадим gruntfile и gulpfile, которые будут делать линтинг,
+конкатенацию и минификацию js-файлов в нашем проекте. Затем мы запустим оба, 
+для того, чтобы они наблюдали за файлами, и выполняли задачи заново при изменениях.
 
-First we will start with our gruntfile, and then I will show you what those
-same tasks would look like in a gulpfile. This will give you a good idea of how 
-everything works together and how gulp improves on Grunt's ideas.
+Начнем с grungfile, и затем я покажу вам, как выглядит то же самое в gulpfile.
+Это поможет вам понять, как все работает вместе и как gulp развил идеи Grunt.
 
 #### gruntfile.js
 
-    <br>module.exports = function(grunt) {
+    module.exports = function(grunt) {
       grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         concat: {
