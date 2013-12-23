@@ -154,42 +154,42 @@ Gulp *потоковая* система сборки. Здесь я хотел 
     });
     
 
-By switching to gulp we have reduced our code from 52 lines to 30. On top of
-that you may notice that we required the same number of plugins, but two of them
-are different even though we are doing the exact same thing to our code. This 
-further illustrates the core difference with plugins that I mentioned above.
+Переключившись на gulp, мы уменьшили наш код с 52 строк до 30. Очевидно, вы 
+заметите, что нам требуется то же количество плагинов, но 2 из них различаются,
+несмотря на то, что мы выполняем совершенно одинаковую задачу. Это еще больше
+иллюстрирует основополагающее различие в плагинах, о котором я писал выше.
 
-With gulp we don't include a watch plugin because *watch* is a core feature -
-there is no plugin needed. The functionality you would expect to be included is 
-included by default - not by a plugin.
+С gulp нам не требуется подключать `watch`, потому как это возможность следить 
+за изменениями в файлах включена в ядро. Это возможность, которая вам нужна
+по умолчанию, а не с помощью плагина.
 
-Additionally, with Grunt the renaming of our minified file is handled by the
-uglify plugin. One plugin has the responsibility of minfiying the code AND 
-renaming it. With gulp, every plugin has a single action - a single 
-responsibility. To rename our minified file in gulp, we simply include the gulp-
-rename plugin and include it in our minify task.
+В дополнение, переименование файла в Grunt выполняется с помощью плагина `uglify`.
+Один и тот же плагин отвечает за минификацию кода, И за переименование файла,
+полученного в результате. В gulp же каждый плагин выполняет одно простое действие,
+и отвечает только за него. Для переименования файла мы просто подключим плагин 
+`gulp-rename` и добавим его в нашу задачу по минификации кода.
+
 
 ## Conclusion
 
-Ultimately, this is all up to personal preference. I personally prefer the “
-node-like” way of writing my task files with gulp, but I must say that I’ve 
-really enjoyed my time with Grunt as well. Knowledge of both is very valuable 
-not only to understand task runners and how they work, but to also understand 
-the decisions both teams made when developing these tools and why they made 
-those decisions. There is a lot to be learned and a lot of time to be saved in 
-development. If you'd like to get started, check out[gulp on Github][3].
+В конечном счете, все можно свести к личным предпочтениям. Лично я предпочитаю
+«node-подобный» путь в написании моих таск-файлов с gulp, но я должен сказать, 
+что так же я действительно рад тому времени, которое я провел с Grunt. Очень
+важно не просто понимать, как устроены оба таск-менеджера, но и понимать какими
+решениями руководстововались команды, которые разрабатывали эти инструменты,
+и почему они эти решения приняли. Это поможет вам узнать много всего нового, 
+и сэкономит вам много времени в разработке. Если вы готовы начать — вперед, 
+[на GitHib за gulp][3].
 
-## Additional Reading
 
-*   [Stream Handbook][5]
-*   [gulp Slides][2]
-*   [gulp on Github][3]
+## Дополнительные материалы
 
-[comments powered by ][6]
+*   [Настольная книга о потоках][5]
+*   [Слайды о gulp][2]
+*   [gulp на Github][3]
 
  [1]: http://wearefractal.com "Fractal"
  [2]: http://slid.es/contra/gulp "gulp slideshow on slid.es"
  [3]: https://github.com/wearefractal/gulp "gulp on Github"
  [4]: https://github.com/substack/stream-handbook
  [5]: https://github.com/substack/stream-handbook "Stream Handbook on Github"
- [6]: http://disqus.com
