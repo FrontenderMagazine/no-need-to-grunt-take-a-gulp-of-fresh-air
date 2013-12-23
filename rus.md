@@ -1,64 +1,61 @@
-На днях состоялся релиз gulp, достойной альтернативы очень популярному
-JavaScript таск-менеджеру GruntJS. Давайте разберемся, что же отличает их
-друго от друга, и попытаемся понять, зачем был создан gulp.
+На днях состоялся релиз gulp (*с англ. «глоток»*), достойной альтернативы очень
+популярному JavaScript таск-менеджеру GruntJS. Давайте разберемся, что же
+отличает их друго от друга, и попытаемся понять, зачем был создан gulp.
 
 Когда дело доходит до JavaScript таск-менеджеров, Grunt — царь. Ну, по крайней 
-мере, раньше было так... Ранее, в этом году, команда на [Fractal][1] 
+мере, раньше было так… Ранее, в этом году, команда на [Fractal][1] 
 [выразила свое отношение][2] к Grunt, и выступила с идеей взять все великие идеи
-и преимущества Grunt, и воссоздать их.
+и преимущества Grunt, и воссоздать их. Они назвали свой проект [gulp][3](глоток).
+И, хотя, он решает те же проблемы, что и Grunt, под капотом у них очень большие
+различия. И так…
 
 
-When it comes to JavaScript task runners, Grunt is king. Well, at least it has
-been... Earlier this year, the team at[Fractal][1] [voiced their concerns][2]
-with Grunt and came up with a plan to take all the great ideas and benefits that
-Grunt introduced and rebuild it. They call their project[gulp][3], and while it
-solves the same problems that Grunt does - there is a lot underneath that makes 
-them both very different. Let's get started.
+## Что такое «таск-менеджер»
 
-## What is a task runner?
+Некоторые из вас могут быть знакомы с Grunt, некоторые — нет. Для несведущих,
+давайте немного проясним, что же такое JavaScript таск-менеджер.
 
-Some of you may be familiar with Grunt and some of you may not. For the
-uninitiated, let’s do a quick overview of exactly what a JavaScript task runner 
-is.
+Таск-менеджер — это небольшое приложение, которое используется для автоматизации
+занудных, отнимающих время задач, которые приходится делать в процессе разработки
+проекта. Такие задачи включают в себя запуск тестов, конкатенацию файлов, 
+минификацию, препроцессинг CSS. Просто создав таск-файл, вы можете
+проинструктировать таск-менеджер, как выполнить практически любую задачу. После
+этого вы можете заняться делом. Это очень простая идея, которая позволяет
+сохранить очень много времени, и помогает держать фокус на разработке.
 
-Task runners are small applications that are used to automate many of the time
-consuming, boring (but very important) tasks that you have to do while 
-developing a project. These include tasks such as running tests, concatenating 
-files, minification, and CSS preprocessing. By simply creating a task file, you 
-can instruct the task runner to automatically take care of just about any 
-development task you can think of as you make changes to your files. It’s a very
-simple idea that will save you a lot of time and allow you to stay focused on 
-development.
 
-## Differences
+## Различия
 
-So, now that we’re on the same page, you may ask: “How is gulp different
-than Grunt and why should I care?
-”
+Теперь, когда мы находимся на одном уровне, вы можете спросить: «Чем
+gulp отличается от Grunt, и почему это меня должно меня беспокоить?»
 
-### Streaming
 
-Gulp is a *streaming* build system. I wont go into detail about streams in this
-article, but[this is a great resource][4] to learn more if you are interested
-.
+### Потоки
 
-To put it simply, streaming gives you more control over your flow and relieves
-you of temporary folders and files. With gulp - you put a file in and you get a 
-file out. It’s that simple.
+Gulp *потоковая* система сборки. Здесь я хотел бы углубиться объяснение устройства
+потоков, но [вот замечательный источник][4], где, если вам интересно, вы можете
+выяснить что такое потоки.
 
-### Plugins
+Если не усложнять, потоки дают вам больше контроля над происходящим и избавляют
+вас от промежуточных папок и файлов. Вы передаете файл в gulp, а затем сохраняете
+результат. Это очень просто.
 
-When it comes to extending functionality, it is gulp’s belief that each
-plugin should only perform a*single action*. Gulp is simply there to connect
-and organize them. There is no shared/conflicting purpose with other plugins or 
-core features.
+
+### Плагины
+
+Когда дело доходит до расширения функциональности, gulp верит, что каждый 
+плагин должен выполнять только *одно простое действие*. Gulp же просто
+соединяет и организует их. Здесь нет общих плагинов или плагинов, конфликтующих
+с другими плагинами или ядром.
 
 ### Code Not Config
 
-My personal favorite improvement is that your gulpfile is code - not *config*.
-Since gulp follows the CommonJS spec, if you are familiar with Node then you 
-will feel right at home. It is far cleaner and easier to read and because it is 
-structured in a familiar way, it's also easier to write.
+Больше всего лично мне нравится, что gulpfile — это код, а не *конфиг*. С тех
+пор как gulp следует спецификации CommonJS, если вы знакомы с Node, вы будете
+чувствовать себя как дома. Все это выглядит аккуратно и читаемо, и, потому как
+все структурированно знакомым способом, то написать gulpfile не составит никаких
+затруднений.
+
 
 ## Examples
 
